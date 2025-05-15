@@ -8,6 +8,14 @@ public class Main {
         deque.insertRear(1);
         deque.insertRear(2);
         deque.insertRear(3);
+        deque.insertRear(3);
+
+        deque.printDequeArray();
+
+        deque.removeFront();
+        deque.removeFront();
+        deque.removeRear();
+
 
         deque.printDequeArray();
 
@@ -34,8 +42,20 @@ class Deque{
         else System.out.println("No space to insert");
     }
 
+    public void removeFront(){
+        if(size>0){
+            front = (capacity+front-1)%capacity;
+            size--;}
+        else
+            System.out.println("Deque Underflow");
+    }
+
     public void removeRear(){
-        
+        if(size>0){
+            rear = (rear+1)%capacity;
+            size--;}
+        else
+            System.out.println("Deque Underflow");
     }
 
     public void insertRear(int x){
